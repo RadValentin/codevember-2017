@@ -4,7 +4,8 @@
   "description": "Daily creative learning experiments using React, VR, A-Frame and Three.js",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel **/*.html",
+    "build": "parcel **/*.html"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,9 @@
   "bugs": {
     "url": "https://github.com/RadValentin/codevember-2017/issues"
   },
-  "homepage": "https://github.com/RadValentin/codevember-2017#readme"
+  "homepage": "https://github.com/RadValentin/codevember-2017#readme",
+  "devDependencies": {
+    "less": "^3.9.0",
+    "parcel-bundler": "^1.12.3"
+  }
 }
