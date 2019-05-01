@@ -4,8 +4,8 @@
   "description": "Daily creative learning experiments using React, VR, A-Frame and Three.js",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel **/*.html",
-    "build": "parcel **/*.html"
+    "dev": "parcel day-*/*.html",
+    "build": "parcel day-*/*.html"
   },
   "repository": {
     "type": "git",
@@ -25,6 +25,7 @@
   "homepage": "https://github.com/RadValentin/codevember-2017#readme",
   "devDependencies": {
     "less": "^3.9.0",
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-clean-dist": "0.0.6"
   }
 }
