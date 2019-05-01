@@ -1,0 +1,25 @@
+{
+  "name": "codevember-2017",
+  "version": "1.0.0",
+  "description": "Daily creative learning experiments using React, VR, A-Frame and Three.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RadValentin/codevember-2017.git"
+  },
+  "keywords": [
+    "a-frame",
+    "react",
+    "vr",
+    "three.js"
+  ],
+  "author": "Valentin Radulescu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/RadValentin/codevember-2017/issues"
+  },
+  "homepage": "https://github.com/RadValentin/codevember-2017#readme"
+}
