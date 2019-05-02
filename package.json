@@ -2,11 +2,7 @@
   "name": "codevember-2017",
   "version": "1.0.0",
   "description": "Daily creative learning experiments using React, VR, A-Frame and Three.js",
-  "main": "index.js",
-  "scripts": {
-    "dev": "parcel index.html day-*/*.html",
-    "build": "parcel build index.html day-*/*.html"
-  },
+  "main": "index.html",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/RadValentin/codevember-2017.git"
@@ -23,17 +19,4 @@
     "url": "https://github.com/RadValentin/codevember-2017/issues"
   },
   "homepage": "https://github.com/RadValentin/codevember-2017#readme",
-  "devDependencies": {
-    "less": "^3.9.0",
-    "parcel-bundler": "^1.12.3",
-    "parcel-plugin-clean-dist": "0.0.6",
-    "parcel-plugin-static-files-copy": "^2.0.0",
-    "sass": "^1.19.0"
-  },
-  "dependencies": {
-    "aframe": "^0.7.1"
-  },
-  "staticFiles": {
-    "staticPath": ["day-1/assets", "day-2/assets"]
-  }
 }
