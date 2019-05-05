@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>💎 Sapphire - Codevember Day 4</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aframe/0.7.1/aframe.js"></script>
+  <script src="https://unpkg.com/aframe-gradient-sky@1.0.4/dist/gradientsky.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="underwater-texture" src="./assets/underwater3.jpg" crossorigin="anonymous">
+      <a-assets-item id="diamond-obj" src="./assets/diamond.obj" />
+    </a-assets>
+    <a-camera wasd-controls="enabled: false"></a-camera>
+    <a-sky color="#000"></a-sky>
+    <a-entity light="angle:45;type:spot;castShadow:true"
+              position="0 1.873 0"></a-entity>
+    <a-box color="tomato" 
+           depth="1" 
+           height="40" 
+           width="39" 
+           shadow="" 
+           position="0 2 -5"></a-box>
+  </a-scene>
+  <script src="./index.js"></script>
+</body>
+</html>
