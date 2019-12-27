@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>⚔️ Unlimited Blade Works - Codevember Day 5</title>
+  <script src="../vendor/aframe.min.js"></script>
+</head>
+<body>
+  <a-scene>
+    <a-assets>
+      <img id="clouds-texture" src="https://static.radulescu.me/codepen/sword/sky6.jpg" crossorigin="anonymous" />
+      <img id="ground-texture" src="https://static.radulescu.me/codepen/sword/ground.jpg" crossorigin="anonymous" />
+      <img id="ground-normal" src="https://static.radulescu.me/codepen/sword/ground-normal.jpg" crossorigin="anonymous" />
+      <img id="ground-displacement" src="https://static.radulescu.me/codepen/sword/ground-displacement.jpg" crossorigin="anonymous" />
+      <a-assets-item id="sword-dae" src="https://static.radulescu.me/codepen/sword/sword.dae" />
+      <a-assets-item id="excalibur-gltf" src="https://static.radulescu.me/codepen/sword/scene.gltf" />
+    </a-assets>
+    <a-camera user-height="1" fov="110" rotation="30 0 0"></a-camera>
+    <a-sky phi-start="40" theta-start="3" src="#clouds-texture"></a-sky>
+    <a-entity light="type: ambient; color: #fff; intensity: 2;"></a-entity>
+    <a-entity position="3.53 4.698 3.118" 
+              light="type:spot;intensity:2.5;castShadow:true;penumbra:0.2" 
+              rotation="0 10 0"></a-entity>
+    <a-cylinder id="ground"
+                color="#3a4446"
+                radius="32" 
+                height="0.1"
+                shadow="cast: false"
+                material="src: #ground-texture;
+                          roughness: 1;
+                          repeat: 100 100; 
+                          normalMap: #ground-normal;
+                          normalTextureRepeat: 100 100;
+                          displacementBias: 0;
+                          displacementMap: #ground-displacement;
+                          displacementTextureRepeat: 100 100;"></a-cylinder>
+    <a-gltf-model src="#excalibur-gltf" 
+                  position="0 3.025 -2.098" 
+                  rotation="-180 0 0" 
+                  scale="0.04 0.04 0.04"
+                  shadow></a-gltf-model>
+  </a-scene>
+  <script src="./index.js"></script>
+</body>
+</html>
