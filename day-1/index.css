@@ -33,37 +33,36 @@ body {
 .space-the-final-frontier .stars,
 .space-the-final-frontier .twinkling,
 .space-the-final-frontier .clouds {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    width: 400vw;
-    height: 400vh;
-    background-position: bottom right;
-  }
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 400vw;
+  height: 400vh;
+  background-position: bottom right;
+}
 
-  .space-the-final-frontier .stars {
-    background-image: var(--stars-bg);
-    animation: stars-ani var(--animation-speed) linear infinite;
-  }
+.space-the-final-frontier .stars {
+  background-image: var(--stars-bg);
+  animation: stars-ani var(--animation-speed) linear infinite;
+}
 
-  .space-the-final-frontier .twinkling {
-    background-image: var(--twinkling-bg);
-    animation: twinkling-ani var(--animation-speed) linear infinite;
-  }
+.space-the-final-frontier .twinkling {
+  background-image: var(--twinkling-bg);
+  animation: twinkling-ani var(--animation-speed) linear infinite;
+}
 
-  .space-the-final-frontier .clouds {
-    background-image: var(--clouds-bg);
-    animation: clouds-ani var(--animation-speed) linear infinite;
-  }
+.space-the-final-frontier .clouds {
+  background-image: var(--clouds-bg);
+  animation: clouds-ani var(--animation-speed) linear infinite;
+}
 
-  .space-the-final-frontier .enterprise {
-    position: relative;
-    width: 600px;
-    height: 536px;
-    height: auto;
-    object-fit: contain;
-    z-index: 1;
-  }
+.space-the-final-frontier .enterprise {
+  position: relative;
+  width: 600px;
+  height: 536px;
+  height: auto;
+  object-fit: contain;
+  z-index: 1;
 }
 
 @keyframes stars-ani {
