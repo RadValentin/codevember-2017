@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>💤 Pillow - Codevember Day 7</title>
+  <script src="../vendor/aframe.min.js"></script>
+  <script src="../vendor/aframe-extras.min.js"></script>
+  <script src="../vendor/gradientsky.min.js"></script>
+</head>
+<body>
+  <script>
+    AFRAME.registerComponent('stay-in-bounds', {
+      init: function () {
+        setInterval(() => this.enforceBounds(), 1000);
+      },
+      
+      enforceBounds: function() {
+        if (this.el.body.position.y < 0) {
+          console.log('reset item', this);
+          
+          this.el.body.position.set(Math.random() * 40 - 20,
+                                    Math.random() * 30 + 1,
+                                    Math.random() * 40 - 20);
+          this.el.body.velocity.set(0, 0, 0);
+        }
+      }
+    });
+  </script>
+  
+  <a-scene>
+    <a-assets>
+      <img id="ground-img" 
+           src="./assets/ground2.jpg"
+           crossorigin="anonymous" />
+      <img id="ground-normal" 
+           src="./assets/ground-normal.jpg"
+           crossorigin="anonymous" />
+      <img id="ground-displacement"
+           src="./assets//ground-displacement.jpg"
+           crossorigin="anonymous" />
+      <a-assets-item id="pillow-obj" 
+                     src="./assets/pillow2.obj"></a-assets-item>
+    </a-assets>
+    <a-entity id="player"
+              camera="userHeight: 1.6"
+              wasd-controls
+              look-controls
+              kinematic-body>
+    </a-entity>
+    <a-gradient-sky material="shader: gradient; topColor: 0 121 255; bottomColor: 255 255 255;"></a-gradient-sky>
+    <a-cylinder id="ground"
+                static-body
+                radius="32" 
+                height="0.01"
+                material="src: #ground-img;
+                          repeat: 10 10; 
+                          normalMap: #ground-normal;
+                          normalTextureRepeat: 10 10;"></a-cylinder>
+  </a-scene>
+  <script src="./index.js"></script>
+</body>
+</html>

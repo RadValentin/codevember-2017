@@ -10,3 +10,4 @@ Daily creative learning experiments using React, VR, A-Frame and Three.js
 | 4 | 💎 Sapphire | https://codepen.io/valentin/full/ZaOzve |
 | 5 | ⚔️ Unlimited Blade Works | https://codepen.io/valentin/full/bYeyNz |
 | 6 | ☂️ Storm | https://codepen.io/valentin/full/OOpavd |
+| 7 | 💤 Pillow | https://codepen.io/valentin/full/KymZdV |
