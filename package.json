@@ -23,6 +23,6 @@
     "http-server": "^0.12.0"
   },
   "scripts": {
-    "start": "http-server"
+    "start": "http-server -c-1"
   }
 }
