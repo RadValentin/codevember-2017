@@ -20,36 +20,50 @@ class WeatherApp extends React.Component {
     this.fetchData("autoip");
   }
 
+  // Wunderground API is no longer online, we'll have to use dummy data :(
+  // fetchData(query) {
+  //   fetch(
+  //     `https://api.wunderground.com/api/${
+  //       WU_API_KEY
+  //     }/yesterday/forecast10day/geolookup/q/${query}.json`
+  //   )
+  //     .then(response => response.json())
+  //     .then(json => {
+  //       if (Boolean(json.response.error)) {
+  //         return Promise.reject("No cities match your search query");
+  //       }
+
+  //       const { location, history, forecast } = json;
+  //       const { city } = location;
+
+  //       this.setState({
+  //         city,
+  //         simpleForecast: forecast.simpleforecast.forecastday.slice(0, 6),
+  //         txtForecast: forecast.txt_forecast.forecastday.slice(0, 12),
+  //         yesterdayData: history,
+  //         isRefreshing: false
+  //       });
+  //     })
+  //     .catch(reason => {
+  //       console.log(`Failed to get weather data: ${reason}`);
+
+  //       this.setState({
+  //         isRefreshing: false
+  //       });
+  //     });
+  // }
+
   fetchData(query) {
-    fetch(
-      `https://api.wunderground.com/api/${
-        WU_API_KEY
-      }/yesterday/forecast10day/geolookup/q/${query}.json`
-    )
-      .then(response => response.json())
-      .then(json => {
-        if (Boolean(json.response.error)) {
-          return Promise.reject("No cities match your search query");
-        }
+    const { location, history, forecast } = weatherData;
+    const { city } = location;
 
-        const { location, history, forecast } = json;
-        const { city } = location;
-
-        this.setState({
-          city,
-          simpleForecast: forecast.simpleforecast.forecastday.slice(0, 6),
-          txtForecast: forecast.txt_forecast.forecastday.slice(0, 12),
-          yesterdayData: history,
-          isRefreshing: false
-        });
-      })
-      .catch(reason => {
-        console.log(`Failed to get weather data: ${reason}`);
-
-        this.setState({
-          isRefreshing: false
-        });
-      });
+    this.setState({
+      city,
+      simpleForecast: forecast.simpleforecast.forecastday.slice(0, 6),
+      txtForecast: forecast.txt_forecast.forecastday.slice(0, 12),
+      yesterdayData: history,
+      isRefreshing: false
+    });
   }
 
   onToggleUnitType() {
@@ -275,7 +289,7 @@ class WeatherBox extends React.Component {
   }
 
   getIconUrl(weather) {
-    const prefix = `https://static.radulescu.me/codepen/storm/`;
+    const prefix = `./assets/`;
 
     return `${prefix}${this.getIconName(weather)}.png`;
   }
