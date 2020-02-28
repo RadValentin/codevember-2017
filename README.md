@@ -12,3 +12,4 @@ Daily creative learning experiments using React, VR, A-Frame and Three.js
 | 6 | ☂️ Storm | https://codepen.io/valentin/full/OOpavd |
 | 7 | 💤 Pillow | https://codepen.io/valentin/full/KymZdV |
 | 8 | 🍦 Fridge | https://codepen.io/valentin/full/vWjNPv |
+| 9 | 🍟 French Fries | https://codepen.io/valentin/full/aVGZvB |
