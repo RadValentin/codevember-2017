@@ -1,6 +1,6 @@
 # codevember-2017
 
-Daily creative learning experiments using React, VR, A-Frame and Three.js
+Daily creative learning experiments using React, VR, A-Frame and Three.js. Originally built on Codepen.io in November 2017 and uploaded on Github in 2020.
 
 | Day | Title | Codepen |
 |-----|-------|---------|
