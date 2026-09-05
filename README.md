@@ -13,3 +13,5 @@ Daily creative learning experiments using React, VR, A-Frame and Three.js. Origi
 | 7 | 💤 Pillow | https://codepen.io/valentin/full/KymZdV |
 | 8 | 🍦 Fridge | https://codepen.io/valentin/full/vWjNPv |
 | 9 | 🍟 French Fries | https://codepen.io/valentin/full/aVGZvB |
+| Bonus | 🐰🏀 Space Jam Logo | https://codepen.io/valentin/full/NaJMmG |
+
