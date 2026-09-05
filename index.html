@@ -5,20 +5,209 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Codevember 2017</title>
+  <style>
+    :root {
+      color-scheme: dark;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: #f7f7fb;
+      background: #11121a;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      margin: 0;
+      padding: 4rem 1.5rem;
+      background:
+        radial-gradient(circle at top left, rgba(116, 80, 255, 0.25), transparent 35rem),
+        #11121a;
+    }
+
+    main {
+      width: min(100%, 64rem);
+      margin: 0 auto;
+    }
+
+    header {
+      max-width: 44rem;
+      margin-bottom: 3rem;
+    }
+
+    h1 {
+      margin: 0 0 1rem;
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      line-height: 1;
+      letter-spacing: -0.05em;
+    }
+
+    header p {
+      margin: 0 0 1.5rem;
+      color: #b9bbca;
+      font-size: 1.125rem;
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .collection-link {
+      display: inline-block;
+      padding: 0.75rem 1rem;
+      border: 1px solid #8071ff;
+      border-radius: 0.5rem;
+      color: #fff;
+      background: #6655e8;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .collection-link:hover,
+    .collection-link:focus-visible {
+      background: #7869ef;
+    }
+
+    ul {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      gap: 1rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      min-height: 12rem;
+      padding: 1.25rem;
+      border: 1px solid #2c2e3b;
+      border-radius: 0.75rem;
+      background: rgba(28, 29, 40, 0.9);
+    }
+
+    .day {
+      margin-bottom: 0.5rem;
+      color: #9b91f5;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 1.35rem;
+    }
+
+    .links {
+      display: flex;
+      gap: 1rem;
+      margin-top: auto;
+      padding-top: 1.5rem;
+    }
+
+    .links a {
+      font-weight: 600;
+      text-underline-offset: 0.2em;
+    }
+
+    .links a:hover,
+    .links a:focus-visible {
+      color: #b2a9ff;
+    }
+  </style>
 </head>
 <body>
-  <h1>Codevember 2017</h1>
-  <p><a href="https://codepen.io/collection/AGzkME/">View the collection on CodePen</a></p>
-  <ul>
-    <li><a href="./day-1/index.html">Day 1</a></li>
-    <li><a href="./day-2/index.html">Day 2</a></li>
-    <li><a href="./day-3/index.html">Day 3</a></li>
-    <li><a href="./day-4/index.html">Day 4</a></li>
-    <li><a href="./day-5/index.html">Day 5</a></li>
-    <li><a href="./day-6/index.html">Day 6</a></li>
-    <li><a href="./day-7/index.html">Day 7</a></li>
-    <li><a href="./day-8/index.html">Day 8</a></li>
-    <li><a href="./day-9/index.html">Day 9</a></li>
-  </ul> 
+  <main>
+    <header>
+      <h1>Codevember 2017</h1>
+      <p>
+        Daily creative learning experiments using React, VR, A-Frame and Three.js.
+        Originally built on CodePen in November 2017 and uploaded to GitHub in 2020.
+      </p>
+      <a class="collection-link" href="https://codepen.io/collection/AGzkME/">
+        View the collection on CodePen
+      </a>
+    </header>
+
+    <ul>
+      <li>
+        <span class="day">Day 1</span>
+        <h2>🌌 Galaxy</h2>
+        <div class="links">
+          <a href="./day-1/index.html">View experiment</a>
+          <a href="https://codepen.io/valentin/full/EbPVNq">CodePen</a>
+        </div>
+      </li>
+      <li>
+        <span class="day">Day 2</span>
+        <h2>🎂 Cake</h2>
+        <div class="links">
+          <a href="./day-2/index.html">View experiment</a>
+          <a href="https://codepen.io/valentin/full/ooxXBP">CodePen</a>
+        </div>
+      </li>
+      <li>
+        <span class="day">Day 3</span>
+        <h2>🌱 Tree</h2>
+        <div class="links">
+          <a href="./day-3/index.html">View experiment</a>
+          <a href="https://codepen.io/valentin/full/bYpMgx">CodePen</a>
+        </div>
+      </li>
+      <li>
+        <span class="day">Day 4</span>
+        <h2>💎 Sapphire</h2>
+        <div class="links">
+          <a href="./day-4/index.html">View experiment</a>
+          <a href="https://codepen.io/valentin/full/ZaOzve">CodePen</a>
+        </div>
+      </li>
+      <li>
+        <span class="day">Day 5</span>
+        <h2>⚔️ Unlimited Blade Works</h2>
+        <div class="links">
+          <a href="./day-5/index.html">View experiment</a>
+          <a href="https://codepen.io/valentin/full/bYeyNz">CodePen</a>
+        </div>
+      </li>
+      <li>
+        <span class="day">Day 6</span>
+        <h2>☂️ Storm</h2>
+        <div class="links">
+          <a href="./day-6/index.html">View experiment</a>
+          <a href="https://codepen.io/valentin/full/OOpavd">CodePen</a>
+        </div>
+      </li>
+      <li>
+        <span class="day">Day 7</span>
+        <h2>💤 Pillow</h2>
+        <div class="links">
+          <a href="./day-7/index.html">View experiment</a>
+          <a href="https://codepen.io/valentin/full/KymZdV">CodePen</a>
+        </div>
+      </li>
+      <li>
+        <span class="day">Day 8</span>
+        <h2>🍦 Fridge</h2>
+        <div class="links">
+          <a href="./day-8/index.html">View experiment</a>
+          <a href="https://codepen.io/valentin/full/vWjNPv">CodePen</a>
+        </div>
+      </li>
+      <li>
+        <span class="day">Day 9</span>
+        <h2>🍟 French Fries</h2>
+        <div class="links">
+          <a href="./day-9/index.html">View experiment</a>
+          <a href="https://codepen.io/valentin/full/aVGZvB">CodePen</a>
+        </div>
+      </li>
+    </ul>
+  </main>
 </body>
 </html>
