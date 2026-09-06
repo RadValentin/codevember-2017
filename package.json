@@ -19,10 +19,10 @@
     "url": "https://github.com/RadValentin/codevember-2017/issues"
   },
   "homepage": "https://github.com/RadValentin/codevember-2017#readme",
-  "devDependencies": {
-    "http-server": "^0.12.0"
-  },
   "scripts": {
     "start": "http-server -c-1"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }

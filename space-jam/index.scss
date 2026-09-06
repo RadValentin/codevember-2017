@@ -1,0 +1,262 @@
+$rThickness: 30px;
+$rDiameter: 400px;
+
+$backroundSize: 128px;
+$numberOfStars: 10;
+
+$initialAnimLength: 1s;
+$letterAnimDelay: .1s;
+$letterAnimLength: .9s;
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  height: 100vh;
+
+  $stars: ();
+
+  @for $i from 1 through $numberOfStars {
+    $spread: random(2);
+    $brightness: (random(5) + 3) / 10;
+    $xPos: random($backroundSize - 5) + 5;
+    $yPos: random($backroundSize - 5) + 5;
+
+    $stars: append($stars, unquote("radial-gradient(circle at #{$xPos}px #{$yPos}px, rgba(255, 255, 255, #{$brightness}), transparent #{$spread}px)"), comma);
+  }
+
+  background-image: $stars;
+  background-size: $backroundSize $backroundSize;
+  background-color: #020107;
+  overflow: hidden;
+}
+
+.space-jam {
+  position: relative;
+  margin: 0;
+  width: 720px;
+  height: 471px;
+  font-family: 'Luckiest Guy', cursive;
+  font-weight: normal;
+  line-height: 1;
+  text-transform: uppercase;
+  opacity: 1;
+  transform: scale(1);
+  animation: introAnim $initialAnimLength forwards reverse;
+  will-change: transform, opacity;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    display: inline-block;
+    text-shadow: .03em .03em #11192f;
+    transform: translateY(0);
+    animation: letterAnim $letterAnimLength forwards ease-in-out;
+    will-change: transform;
+
+    &:after {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      text-shadow: none;
+      background: radial-gradient(circle at center, #cede73 0%,#a5cd63 21%,#3ab473 36%,#036ba5 54%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      -webkit-text-stroke-color: white;
+      -webkit-text-stroke-width: 4px;
+    }
+
+    @for $i from 2 through 9 {
+      &:nth-of-type(#{$i}) {
+        animation-delay: ($i - 1) * $letterAnimDelay + $initialAnimLength;
+      }
+    }
+
+    &:first-of-type,
+    &:last-of-type {
+      animation-delay: 6 * $letterAnimDelay + $initialAnimLength;
+    }
+  }
+
+  .s-s {
+    font-size: 160px;
+    top: 120px;
+    left: 0px;
+    z-index: 4;
+
+    &:after {
+      background-position: 5px 14px;
+    }
+  }
+
+  .s-p {
+    font-size: 133px;
+    top: 132px;
+    left: 70px;
+    z-index: 3;
+
+    &:after {
+      background-position: 8px 20px;
+    }
+  }
+
+  .s-a {
+    font-size: 155px;
+    top: 123px;
+    left: 116px;
+    z-index: 2;
+
+    &:after {
+      background-position: -20px 25px;
+    }
+  }
+
+  .s-c {
+    font-size: 140px;
+    top: 138px;
+    left: 197px;
+    z-index: 3;
+
+    &:after {
+      background-position: 8px 25px;
+    }
+  }
+
+  .s-e {
+    font-size: 140px;
+    top: 125px;
+    left: 258px;
+    z-index: 2;
+
+    &:after {
+      background-position: -10px 25px;
+    }
+  }
+
+  .j-j {
+    top: -25px;
+    left: 228px;
+    font-size: 500px;
+    font-family: 'Paytone One';
+    display: inline-block;
+
+
+    &:after {
+      background-position: -20px 25px;
+    }
+
+    &:not(:first-child):not(:last-child) {
+      clip: rect(388px, 62px, 453px, -10px);
+    }
+
+    &:last-child {
+      clip: rect(0px, 231px, 224px, 0px);
+    }
+  }
+
+  .j-a {
+    top: 70px;
+    left: 375px;
+    font-size: 280px;
+    z-index: 3;
+
+    &:after {
+      background-position: 10px 20px;
+    }
+  }
+
+  .j-m {
+    top: 70px;
+    left: 505px;
+    font-size: 270px;
+    z-index: 2;
+
+    &:after {
+      background-position: 30px 25px;
+    }
+  }
+
+  .rings {
+    position: absolute;
+    top: -10px;
+    left: 187px;
+    width: $rDiameter;
+    height: $rDiameter;
+    transform: rotate(8deg) skewX(-33deg);
+
+    [class^=ring-] {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        border-radius: 50%;
+      }
+    }
+
+    @for $i from 0 through 3 {
+      .ring-#{$i+1} {
+        $newDiameter: $rDiameter - 2 * $i * $rThickness;
+        // convert ring thickness to % value for gradient
+        $percThickness: 100% - 100% * $rThickness / ($newDiameter / 2);
+
+        width: $newDiameter;
+        height: $newDiameter;
+
+        &:after {
+          width: $newDiameter;
+          height: $newDiameter;
+          background: radial-gradient(
+            circle closest-side, 
+            transparent $percThickness,
+            #f6eb16 $percThickness,
+            #ed2224 88%,
+            #35469d 100%
+          );
+        }
+      }
+    }
+  }
+}
+
+@keyframes introAnim {
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+
+@keyframes letterAnim {
+  0% {
+    transform: translateY(0px);
+  }
+
+  25% {
+    transform: translateY(-10px);
+  }
+
+  60% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* :) */
+
+iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
